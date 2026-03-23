@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpRock AI Node Dashboard</title>
+    <style>
+        body {
+            background-color: #020617;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .card {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 30px;
+            border: 2px solid #38bdf8;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .counter-container {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        #uprock-val {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #22c55e;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 10px #22c55e;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .footer-text {
+            color: #64748b;
+            font-size: 0.75rem;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <span style="font-size: 2.5rem; margin-right: 12px;">🤖</span>
+            <h2 style="margin: 0; font-family: 'Segoe UI', sans-serif;">UpRock AI Node</h2>
+        </div>
+
+        <div class="counter-container">
+            <p style="margin: 0; color: #94a3b8; font-size: 0.9rem;">
+                LIVE MINING BALANCE <br>
+                <span dir="rtl">(رصيد التعدين المباشر)</span>
+            </p>
+            <span id="uprock-val">12000.00000</span>
+            <div class="status">
+                <span class="dot"></span>
+                <span>Active & Mining | نشط ويعدّن</span>
+            </div>
+        </div>
+
+        <a href="https://link.uprock.com/i/9f7f2a44" target="_blank" class="btn">
+            START EARNING NOW 🚀 <br>
+            <span style="font-size: 0.8rem; font-weight: normal;">ابدأ الربح الآن مجاناً</span>
+        </a>
+
+        <p class="footer-text">
+            Join the decentralized AI network and earn passive income.<br>
+            انضم لشبكة الذكاء الاصطناعي وحقق دخلاً سلبياً.
+        </p>
+    </div>
+
+    <script>
+        let balance = 12000.00000;
+        const increment = 0.0000215; // معدل التعدين التقريبي
+
+        setInterval(() => {
+            balance += increment;
+            document.getElementById('uprock-val').innerText = balance.toFixed(5);
+        }, 1000);
+    </script>
+
+</body>
+</html>
